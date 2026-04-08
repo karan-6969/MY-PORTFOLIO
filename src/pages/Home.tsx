@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ChessboardEasterEgg from '../components/ChessboardEasterEgg';
 import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -97,12 +98,12 @@ export default function Home() {
       {/* YELLOW ABOUT MARQUEE / OVERLAP */}
       <section id="about" className="bg-rmYellow py-24 overflow-hidden border-t-8 border-textMain rm-section">
         <div className="flex animate-marquee whitespace-nowrap min-w-full">
-           <span className="font-syne font-bold text-[8vw] text-textMain uppercase px-8">OBSESSED WITH DETAILS</span>
-           <span className="font-syne font-bold text-[8vw] text-surface uppercase px-8 italic">ALWAYS EATING</span>
-           <span className="font-syne font-bold text-[8vw] text-rmOrange uppercase px-8">REFACTORS FOR FUN</span>
-           <span className="font-syne font-bold text-[8vw] text-textMain uppercase px-8">OBSESSED WITH DETAILS</span>
-           <span className="font-syne font-bold text-[8vw] text-surface uppercase px-8 italic">ALWAYS EATING</span>
-           <span className="font-syne font-bold text-[8vw] text-rmOrange uppercase px-8">REFACTORS FOR FUN</span>
+           <span className="font-syne font-bold text-[15vw] text-textMain uppercase px-8">OBSESSED WITH DETAILS</span>
+           <span className="font-syne font-bold text-[15vw] text-surface uppercase px-8 italic">ALWAYS EATING</span>
+           <span className="font-syne font-bold text-[15vw] text-rmOrange uppercase px-8">REFACTORS FOR FUN</span>
+           <span className="font-syne font-bold text-[15vw] text-textMain uppercase px-8">OBSESSED WITH DETAILS</span>
+           <span className="font-syne font-bold text-[15vw] text-surface uppercase px-8 italic">ALWAYS EATING</span>
+           <span className="font-syne font-bold text-[15vw] text-rmOrange uppercase px-8">REFACTORS FOR FUN</span>
         </div>
       </section>
 
@@ -153,6 +154,10 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* CHESS EASTER EGG EMBED */}
+      <ChessboardEasterEgg />
+
     </div>
   );
 }
