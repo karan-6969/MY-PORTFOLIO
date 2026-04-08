@@ -7,137 +7,73 @@ export default function DPI() {
   }, []);
 
   return (
-    <div className="w-full bg-[#0D0D0D] text-background min-h-screen pt-[72px] flex flex-col font-inter">
+    <div className="w-full bg-background text-textMain min-h-screen pt-[100px] flex flex-col font-inter selection:bg-rmBlue selection:text-surface">
       {/* HERO BLOCK */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-24 relative overflow-hidden flex-1">
-        <span className="absolute top-10 right-10 text-[120px] md:text-[240px] font-syne font-extrabold text-[#1A1A1A] z-0 select-none leading-none">01</span>
+      <section className="w-full max-w-[1400px] mx-auto px-6 py-24 relative overflow-hidden flex-1">
+        <span className="absolute top-10 right-10 text-[20vw] font-syne font-extrabold text-[#0055FF] opacity-10 z-0 select-none leading-none -rotate-6">01</span>
         
-        <div className="relative z-10 w-full md:w-[70%]">
-          <h1 className="font-syne font-bold text-[48px] md:text-[72px] leading-tight mb-6">Deep Packet Inspection Engine</h1>
-          <p className="text-[18px] md:text-[22px] italic text-[#6B6B6B] mb-12">"Reading inside encrypted traffic — legally."</p>
+        <div className="relative z-10 w-full lg:w-[80%] mt-12">
+          <h1 className="font-syne font-extrabold text-[8vw] md:text-[6vw] leading-[0.8] mb-12 uppercase tracking-tighter">Deep Packet <br/><span className="bg-[#0055FF] text-surface px-[2vw] pt-[1vw] pb-[0.5vw] rounded-[999px] inline-block -rotate-2 transform">Inspection</span> Engine</h1>
+          <p className="text-[20px] md:text-[28px] font-medium text-textMain mb-16 max-w-2xl">"Reading inside encrypted traffic — legally."</p>
           
-          <div className="flex flex-wrap gap-4 text-[13px] md:text-[14px] text-[#888] items-center uppercase tracking-widest font-medium">
-            <span>Type: Systems / Security</span>
-            <span className="opacity-50">·</span>
-            <span>Stack: C++ · Python · CMake</span>
-            <span className="opacity-50">·</span>
-            <span>Arch: Multi-threaded</span>
-            <span className="opacity-50">·</span>
-            <a href="https://github.com/karan-6969/Deep-Packet-Inspection" target="_blank" rel="noopener noreferrer" className="text-background border-b border-background hover:text-accent hover:border-accent transition-colors pb-1">GitHub</a>
+          <div className="flex flex-wrap gap-4 text-[14px] md:text-[16px] items-center uppercase tracking-widest font-bold">
+            <span className="bg-[#FFC200] px-6 py-3 rounded-full">Systems / Security</span>
+            <span className="bg-textMain text-surface px-6 py-3 rounded-full">C++ · CMake</span>
+            <a href="https://github.com/karan-6969/Deep-Packet-Inspection" target="_blank" rel="noopener noreferrer" className="border-4 border-textMain px-6 py-2 rounded-full hover:bg-textMain hover:text-surface transition-all magnetic cursor-none">GitHub</a>
           </div>
         </div>
       </section>
 
       {/* THE IDEA */}
-      <section className="bg-background text-textMain py-32 border-t border-borderLine mt-auto">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-4 mb-16">
-            <span className="text-[11px] font-mono text-textMuted tracking-widest">WHAT IS IT</span>
-            <div className="h-[1px] w-12 bg-borderLine"></div>
+      <section className="bg-[#0055FF] text-surface py-32 rounded-t-[80px] -mt-10 relative z-20 border-[8px] border-textMain border-b-0">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="flex items-center gap-4 mb-20">
+            <span className="text-[14px] font-mono tracking-widest bg-textMain text-surface px-6 py-2 rounded-full font-bold">WHAT IS IT</span>
           </div>
           
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
-            <h2 className="lg:w-[55%] font-syne font-bold text-[32px] md:text-[36px] leading-[1.2] tracking-tight bg-surface p-10 md:p-14 border border-borderLine">
-              "A multi-threaded network engine that classifies live traffic — YouTube, Netflix, Facebook — in real time, by inspecting TLS handshakes."
+          <div className="flex flex-col lg:flex-row gap-16 items-start">
+            <h2 className="lg:w-[55%] font-syne font-extrabold text-[36px] md:text-[4vw] leading-[0.9] tracking-tight bg-surface text-textMain p-12 md:p-16 rounded-[48px] border-[8px] border-textMain shadow-[16px_16px_0px_#1A1A1A]">
+              "A multi-threaded network engine that classifies live traffic in real time."
             </h2>
-            <div className="lg:w-[45%] flex flex-col space-y-6 text-[16px] text-textMuted leading-relaxed pt-2">
-              <p>DPI (Deep Packet Inspection) examines the contents of network packets beyond just headers. Even though HTTPS is encrypted, the TLS Client Hello packet reveals the destination domain in plaintext — the SNI (Server Name Indication) field. This engine exploits that.</p>
-              <p>Built for learning and demonstration purposes, it reads .pcap capture files, classifies traffic by application type, applies blocking rules, and writes filtered output — all with a multi-threaded architecture for high throughput.</p>
+            <div className="lg:w-[45%] flex flex-col space-y-8 text-[20px] font-medium leading-relaxed pt-2">
+              <p>DPI examines the contents of network packets beyond headers. Even encrypted, the TLS Client Hello packet reveals the destination domain in plaintext. This engine exploits that gap.</p>
+              <p>Built for demonstration, it reads .pcap files, classifies traffic by app type, applies rules, and writes output — entirely multi-threaded.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="bg-background text-textMain pb-32">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ARCHITECTURE */}
+      <section className="bg-[#FFC200] text-textMain py-32 border-x-[8px] border-t-[8px] border-textMain rounded-t-[80px] -mt-10 relative z-30">
+        <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center gap-4 mb-16">
-            <span className="text-[11px] font-mono text-textMuted tracking-widest">ARCHITECTURE</span>
-            <div className="h-[1px] w-12 bg-borderLine"></div>
+            <span className="text-[14px] font-mono tracking-widest bg-textMain text-surface px-6 py-2 rounded-full font-bold">ARCHITECTURE</span>
           </div>
 
-          <div className="w-full bg-[#1A1A1A] p-8 md:p-16 mb-12 flex flex-col md:flex-row flex-wrap justify-between items-center text-background font-mono text-[12px] md:text-[14px] gap-4 tracking-tight border border-[#333]">
-            <span>[PCAP File]</span><span className="text-accent">→</span>
-            <span>[Reader Thread]</span><span className="text-accent">→</span>
-            <span>[Load Balancer ×2]</span><span className="text-accent">→</span>
-            <span>[Fast Path Workers ×4]</span><span className="text-accent">→</span>
-            <span>[Output Queue]</span><span className="text-accent">→</span>
-            <span>[Writer Thread]</span><span className="text-accent">→</span>
-            <span>[Output PCAP]</span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-surface border border-borderLine p-8 hover:border-textMain transition-colors">
-              <h3 className="font-syne font-bold text-[20px] mb-4">SNI Extraction</h3>
-              <p className="text-[14px] text-textMuted leading-relaxed">Reads TLS Client Hello at byte level. Finds extension type 0x0000. Extracts hostname — e.g. 'www.youtube.com' — before encryption begins.</p>
-            </div>
-            <div className="bg-surface border border-borderLine p-8 hover:border-textMain transition-colors">
-              <h3 className="font-syne font-bold text-[20px] mb-4">Flow Tracking</h3>
-              <p className="text-[14px] text-textMuted leading-relaxed">Every connection is a 5-tuple: src IP, dst IP, src port, dst port, protocol. All packets sharing the same 5-tuple are one flow. Block one, block all.</p>
-            </div>
-            <div className="bg-surface border border-borderLine p-8 hover:border-textMain transition-colors">
-              <h3 className="font-syne font-bold text-[20px] mb-4">Multi-threaded Pipeline</h3>
-              <p className="text-[14px] text-textMuted leading-relaxed">Reader → Load Balancers → Fast Path workers. Consistent hashing ensures all packets of same flow go to same thread. No race conditions.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TECH DEEP DIVE */}
-      <section className="bg-surface text-textMain py-32 border-t border-borderLine">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">
-          <div className="lg:w-1/2">
-            <div className="flex items-center gap-4 mb-10">
-              <span className="text-[11px] font-mono text-textMuted tracking-widest">UNDER THE HOOD</span>
-              <div className="h-[1px] w-12 bg-borderLine"></div>
-            </div>
-            
-            <div className="bg-[#1A1A1A] p-8 text-[#E8E8E8] font-mono text-[13px] overflow-x-auto whitespace-pre">
-{`// TLS Client Hello SNI extraction
-if (payload[0] == 0x16 &&    // Handshake
-    payload[5] == 0x01) {    // Client Hello
-  
-  skip → SessionID, CipherSuites
-  
-  for each extension:
-    if (ext_type == 0x0000) {  // SNI
-      return hostname_string;
-    }
-}`}
-            </div>
-          </div>
-          <div className="lg:w-1/2 flex flex-col justify-center">
-            <ul className="space-y-6 text-[16px] text-textMuted font-inter list-none">
-              <li className="flex gap-4 items-start"><span className="text-accent mt-1">•</span>Reads PCAP files (Wireshark captures) at packet-level</li>
-              <li className="flex gap-4 items-start"><span className="text-accent mt-1">•</span>Identifies: YouTube, Facebook, Google, Netflix, TikTok, etc.</li>
-              <li className="flex gap-4 items-start"><span className="text-accent mt-1">•</span>Block by: IP · App Type · Domain substring</li>
-              <li className="flex gap-4 items-start"><span className="text-accent mt-1">•</span>Two versions: single-threaded (learning) + multi-threaded</li>
-              <li className="flex gap-4 items-start"><span className="text-accent mt-1">•</span>No external libraries — pure C++17 + POSIX raw processing</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* SKILLS */}
-      <section className="bg-background py-16 border-t border-borderLine overflow-visible relative">
-        <div className="max-w-7xl mx-auto px-6 whitespace-nowrap overflow-x-auto pb-4 custom-scrollbar">
-          <div className="flex gap-4 font-mono text-[13px] text-textMuted w-max">
-            {['C++', 'Multi-threading', 'Network Protocols', 'TLS/SSL', 'Packet Parsing', 'PCAP', 'Systems Design', 'Python'].map(s => (
-              <span key={s} className="border border-borderLine px-6 py-3 hover:bg-textMain hover:text-background transition-colors">{s}</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { t: 'SNI Extraction', d: 'Reads TLS Client Hello at byte level. Extracts hostname before encryption.' },
+              { t: 'Flow Tracking', d: 'Every connection is a 5-tuple. All packets sharing it are one flow. Block one, block all.' },
+              { t: 'Pipeline', d: 'Reader → Load Balancers → Fast Path workers. Consistent hashing across threads.' }
+            ].map(item => (
+              <div key={item.t} className="bg-surface border-[8px] border-textMain rounded-[40px] p-10 hover:translate-y-[-10px] transition-transform duration-300">
+                <h3 className="font-syne font-extrabold text-[32px] mb-6">{item.t}</h3>
+                <p className="text-[18px] font-medium leading-relaxed">{item.d}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-textMain text-background py-32 text-center">
-        <h2 className="font-syne font-bold text-[32px] md:text-[48px] mb-12">Dive into the source code.</h2>
-        <a href="https://github.com/karan-6969/Deep-Packet-Inspection" target="_blank" rel="noopener noreferrer" className="inline-block border-2 border-background text-background px-12 py-5 font-inter font-medium hover:bg-background hover:text-textMain transition-colors mb-20">
-          VIEW ON GITHUB →
+      <section className="bg-textMain text-surface py-40 border-8 border-textMain text-center relative z-40 rounded-t-[80px] -mt-10">
+        <h2 className="font-syne font-extrabold text-[10vw] uppercase leading-[0.8] mb-16">Dive<br/>Deeper</h2>
+        <a href="https://github.com/karan-6969/Deep-Packet-Inspection" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#0055FF] border-4 border-transparent hover:border-surface text-surface px-12 py-5 font-inter font-bold text-[20px] rounded-[999px] magnetic cursor-none transition-all">
+          VIEW ON GITHUB
         </a>
-        <div className="flex justify-center gap-12 font-mono text-[13px] uppercase tracking-widest text-[#888]">
-           <Link to="/projects/routex" className="hover:text-background transition-colors">← Prev Project</Link>
-           <Link to="/projects/gitpeek" className="hover:text-background transition-colors">Next Project →</Link>
+        <div className="flex justify-center gap-12 font-inter text-[16px] font-bold mt-24">
+           <Link to="/projects/routex" className="hover:text-[#FFC200] transition-colors underline decoration-2">← PREV PROJECT</Link>
+           <Link to="/projects/gitpeek" className="hover:text-[#0055FF] transition-colors underline decoration-2">NEXT PROJECT →</Link>
         </div>
       </section>
     </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,15 +11,18 @@ export default function Home() {
   
   useGSAP(() => {
     // Basic pop-in animations
-    gsap.fromTo('.rm-pop', 
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: 'power3.out',
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: 'top 80%',
+    const popElements = heroRef.current?.querySelectorAll('.rm-pop');
+    if (popElements && popElements.length > 0) {
+      gsap.fromTo(popElements, 
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power2.out',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top 80%',
+          }
         }
-      }
-    );
+      );
+    }
     
     // Readymag Parallax Effect
     gsap.utils.toArray<HTMLElement>('.rm-parallax').forEach((el) => {
@@ -52,36 +56,40 @@ export default function Home() {
 
      // And for sections
     gsap.utils.toArray<HTMLElement>('.rm-section').forEach((sec) => {
-      gsap.fromTo(sec.querySelectorAll('.rm-reveal'), 
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)',
-          scrollTrigger: { trigger: sec, start: 'top 75%' }
-        }
-      );
+      const reveals = sec.querySelectorAll('.rm-reveal');
+      if (reveals && reveals.length > 0) {
+        gsap.fromTo(reveals, 
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)',
+            scrollTrigger: { trigger: sec, start: 'top 75%' }
+          }
+        );
+      }
     });
   }, { scope: heroRef.current?.parentElement || undefined });
 
   return (
     <div className="w-full bg-background selection:bg-rmOrange selection:text-surface">
       {/* HERO SECTION */}
-      <section ref={heroRef} className="relative min-h-screen pt-[120px] pb-20 px-6 max-w-[1400px] mx-auto flex flex-col justify-between">
-        <h1 className="font-syne font-extrabold text-[15vw] leading-[0.8] tracking-tighter text-textMain uppercase relative z-10 w-full mt-10">
-          <div className="flex flex-col items-start gap-4">
-            <span className="block hover:text-rmBlue transition-colors duration-300 rm-pop rm-parallax" data-speed="0.8">KARAN</span>
-            <span className="block bg-[#FFC200] text-[#1A1A1A] px-[4vw] pt-[1.5vw] pb-[0.5vw] rounded-[999px] transform -rotate-3 hover:translate-y-[-10px] hover:rotate-0 transition-transform duration-500 rm-pop rm-parallax" data-speed="1.2">BHATT</span>
+      <section ref={heroRef} className="relative min-h-screen pt-[120px] pb-20 px-6 max-w-[1400px] mx-auto flex flex-col justify-between w-full overflow-hidden">
+        <h1 className="font-syne font-extrabold text-[15vw] leading-[0.8] tracking-tighter text-textMain uppercase relative z-10 w-full flex justify-center mt-10">
+          <div className="flex flex-col items-center gap-4 md:gap-8">
+            <span className="block hover:text-rmBlue transition-colors duration-300 rm-pop rm-parallax" data-speed="0.2">KARAN</span>
+            <span className="block bg-[#FFC200] text-[#1A1A1A] px-[5vw] pt-[2vw] pb-[0.5vw] rounded-[999px] transform -rotate-3 hover:translate-y-[-10px] hover:rotate-0 transition-transform duration-500 rm-pop rm-parallax" data-speed="0.6">BHATT</span>
           </div>
         </h1>
         
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-24 gap-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-20 gap-12 w-full text-left">
           <p className="text-[24px] md:text-[36px] font-inter font-medium text-textMain max-w-2xl leading-tight rm-pop">
-            I craft interfaces that are <span className="bg-[#FFC200] text-[#1A1A1A] px-2 rounded-lg">bold</span>, fast, and unforgettable. Creative Developer & Frontend Engineer.
+            I craft interfaces that are <span className="bg-[#FFC200] text-[#1A1A1A] px-3 py-1 rounded-[16px] inline-block -rotate-2 transform">bold</span>, fast, and unforgettable.<br className="hidden lg:block"/> Creative Developer & Frontend Engineer.
           </p>
-          <div className="flex flex-col items-start lg:items-end gap-3 text-[14px] font-inter font-bold rm-pop sm:mb-12">
-            <span className="bg-textMain text-surface px-6 py-3 rounded-[999px]">BASED IN INDIA</span>
-            <span className="bg-rmOrange text-surface px-6 py-3 rounded-[999px] flex items-center gap-3">
-              <span className="w-2 h-2 rounded-[999px] bg-surface animate-pulse"></span>
-              AVAILABLE 2025
-            </span>
+          <div className="flex flex-col items-start lg:items-end gap-3 font-inter font-bold rm-pop sm:mb-12">
+            <a href="/Karan_Bhatt_CV.pdf" target="_blank" rel="noopener noreferrer" className="group bg-[#FF3B00] text-surface px-8 py-4 rounded-[999px] flex items-center gap-4 hover:bg-textMain transition-colors duration-300 magnetic cursor-none">
+              <span className="text-[16px]">DOWNLOAD CV</span>
+              <div className="w-8 h-8 bg-surface text-[#FF3B00] rounded-full flex items-center justify-center group-hover:text-textMain transition-colors">
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -111,18 +119,18 @@ export default function Home() {
               { n: '02', title: 'GitPeek', sub: 'Dev profile analyzer', bg: 'bg-[#0047B3]', link: '/projects/gitpeek' },
               { n: '03', title: 'Route-X', sub: 'Path optimization tool', bg: 'bg-[#003D99]', link: '/projects/routex' }
             ].map((work, index) => (
-              <a href={work.link} 
+              <Link to={work.link} 
                  key={work.n} 
                  className={`group ${work.bg} rounded-[48px] p-12 lg:p-16 hover:bg-rmOrange transition-colors duration-500 min-h-[400px] flex flex-col justify-between rm-reveal relative overflow-hidden ${index === 2 ? 'md:col-span-2 md:min-h-[500px]' : ''}`}>
                  <span className="font-mono text-[14px] text-surface opacity-60 bg-textMain/20 px-4 py-2 rounded-full w-max">PROJ {work.n}</span>
-                 <div className="absolute top-12 right-12 w-20 h-20 bg-rmYellow rounded-full flex items-center justify-center text-textMain scale-0 group-hover:scale-100 transition-transform duration-500 ease-out shadow-2xl">
+                 <div className="absolute top-12 right-12 w-20 h-20 bg-[#FFC200] rounded-full flex items-center justify-center text-textMain scale-0 group-hover:scale-100 transition-transform duration-500 ease-out shadow-2xl">
                    <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
                  </div>
                  <div className="mt-20">
                    <h3 className="font-syne font-extrabold text-[5vw] lg:text-[4vw] text-surface leading-[0.9]">{work.title}</h3>
                    <p className="font-inter text-surface opacity-80 mt-6 text-[20px] font-medium">{work.sub}</p>
                  </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

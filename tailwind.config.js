@@ -38,8 +38,8 @@ export default {
         }
       },
       animation: {
-        marquee: 'marquee 30s linear infinite',
-        marqueeRight: 'marqueeRight 30s linear infinite',
+        marquee: 'marquee 12s linear infinite',
+        marqueeRight: 'marqueeRight 12s linear infinite',
         scrolldown: 'scrolldown 2s ease-in-out infinite',
       }
     },
