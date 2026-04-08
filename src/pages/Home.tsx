@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <div className="w-full bg-background selection:bg-rmOrange selection:text-surface">
       {/* HERO SECTION */}
-      <section ref={heroRef} className="relative min-h-screen pt-[120px] pb-20 px-6 max-w-[1400px] mx-auto flex flex-col justify-between w-full overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen pt-[120px] pb-20 flex flex-col justify-between w-full overflow-hidden">
         <h1 className="font-syne font-extrabold text-[15vw] leading-[0.8] tracking-tighter text-textMain uppercase relative z-10 w-full flex justify-center mt-10">
           <div className="flex flex-col items-center gap-4 md:gap-8">
             <span className="block hover:text-rmBlue transition-colors duration-300 rm-pop rm-parallax" data-speed="0.2">KARAN</span>
@@ -80,10 +80,11 @@ export default function Home() {
           </div>
         </h1>
         
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-20 gap-12 w-full text-left">
-          <p className="text-[24px] md:text-[36px] font-inter font-medium text-textMain max-w-2xl leading-tight rm-pop">
-            I craft interfaces that are <span className="bg-[#FFC200] text-[#1A1A1A] px-3 py-1 rounded-[16px] inline-block -rotate-2 transform">bold</span>, fast, and unforgettable.<br className="hidden lg:block"/> Creative Developer & Frontend Engineer.
-          </p>
+        <div className="max-w-[1400px] mx-auto px-6 w-full">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-20 gap-12 w-full text-left">
+            <p className="text-[24px] md:text-[36px] font-inter font-medium text-textMain max-w-2xl leading-tight rm-pop">
+              I craft interfaces that are <span className="bg-[#FFC200] text-[#1A1A1A] px-3 py-1 rounded-[16px] inline-block -rotate-2 transform">bold</span>, fast, and unforgettable.<br className="hidden lg:block"/> Creative Developer & Frontend Engineer.
+            </p>
           <div className="flex flex-col items-start lg:items-end gap-3 font-inter font-bold rm-pop sm:mb-12">
             <a href="/Karan_Bhatt_CV.pdf" target="_blank" rel="noopener noreferrer" className="group bg-[#FF3B00] text-surface px-8 py-4 rounded-[999px] flex items-center gap-4 hover:bg-textMain transition-colors duration-300 magnetic cursor-none">
               <span className="text-[16px]">DOWNLOAD CV</span>
@@ -93,17 +94,18 @@ export default function Home() {
             </a>
           </div>
         </div>
+        </div>
       </section>
 
       {/* YELLOW ABOUT MARQUEE / OVERLAP */}
       <section id="about" className="bg-rmYellow py-24 overflow-hidden border-t-8 border-textMain rm-section">
         <div className="flex animate-marquee whitespace-nowrap min-w-full">
-           <span className="font-syne font-bold text-[15vw] text-textMain uppercase px-8">OBSESSED WITH DETAILS</span>
-           <span className="font-syne font-bold text-[15vw] text-surface uppercase px-8 italic">ALWAYS EATING</span>
-           <span className="font-syne font-bold text-[15vw] text-rmOrange uppercase px-8">REFACTORS FOR FUN</span>
-           <span className="font-syne font-bold text-[15vw] text-textMain uppercase px-8">OBSESSED WITH DETAILS</span>
-           <span className="font-syne font-bold text-[15vw] text-surface uppercase px-8 italic">ALWAYS EATING</span>
-           <span className="font-syne font-bold text-[15vw] text-rmOrange uppercase px-8">REFACTORS FOR FUN</span>
+           <span className="font-syne font-bold text-[8vw] text-textMain uppercase px-8">OBSESSED WITH DETAILS</span>
+           <span className="font-syne font-bold text-[8vw] text-surface uppercase px-8 italic">ALWAYS EATING</span>
+           <span className="font-syne font-bold text-[8vw] text-rmOrange uppercase px-8">REFACTORS FOR FUN</span>
+           <span className="font-syne font-bold text-[8vw] text-textMain uppercase px-8">OBSESSED WITH DETAILS</span>
+           <span className="font-syne font-bold text-[8vw] text-surface uppercase px-8 italic">ALWAYS EATING</span>
+           <span className="font-syne font-bold text-[8vw] text-rmOrange uppercase px-8">REFACTORS FOR FUN</span>
         </div>
       </section>
 
