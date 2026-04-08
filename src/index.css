@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #F0EFE9;
+  --color-primary-text: #1A1A1A;
+  --color-secondary-text: #666666;
+  --color-blue: #0055FF;
+  --color-yellow: #FFC200;
+  --color-orange: #FF3B00;
+  --color-purple: #2C3A32;
+  --color-surface: #FFFFFF;
+  --color-terminal: #111111;
+  --color-code-text: #EDEDED;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-primary-text);
+  overflow-x: hidden;
+  /* Hide standard cursor to use the custom one */
+  cursor: none;
+}
+
+/* Base link styles */
+a, button {
+  cursor: none; /* Let custom cursor handle it */
+}
+
+/* Custom Cursor */
+#custom-cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  background-color: var(--color-primary-text);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+#custom-cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 40px; height: 40px;
+  border: 2px solid var(--color-primary-text);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: var(--color-primary-text);
+  text-align: center;
+  background-color: transparent;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+/* Hide cursor entirely on touch devices */
+@media (pointer: coarse) {
+  #custom-cursor-dot, #custom-cursor-ring {
+    display: none !important;
+  }
+  body { cursor: auto; }
+  a, button { cursor: pointer; }
+}
