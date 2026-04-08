@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cursor from './components/Cursor';
 import Navigation from './components/Navigation';
-import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 import Home from './pages/Home';
 import DPI from './pages/DPI';
@@ -23,7 +22,6 @@ function App() {
             <Route path="/projects/routex" element={<RouteX />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </BrowserRouter>
   );

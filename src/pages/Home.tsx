@@ -74,9 +74,9 @@ export default function Home() {
       {/* HERO SECTION */}
       <section ref={heroRef} className="relative min-h-screen pt-[120px] pb-20 flex flex-col justify-between w-full overflow-hidden">
         <h1 className="font-syne font-extrabold text-[15vw] leading-[0.8] tracking-tighter text-textMain uppercase relative z-10 w-full flex justify-center mt-10">
-          <div className="flex flex-col items-center gap-4 md:gap-8">
-            <span className="block hover:text-rmBlue transition-colors duration-300 rm-pop rm-parallax" data-speed="0.2">KARAN</span>
-            <span className="block bg-[#FFC200] text-[#1A1A1A] px-[5vw] pt-[2vw] pb-[0.5vw] rounded-[999px] transform -rotate-3 hover:translate-y-[-10px] hover:rotate-0 transition-transform duration-500 rm-pop rm-parallax" data-speed="0.6">BHATT</span>
+          <div className="flex flex-col items-center justify-center -space-y-[1vw] relative w-full">
+            <span className="block hover:text-rmBlue transition-colors duration-300 rm-pop rm-parallax relative z-10" data-speed="0.2">KARAN</span>
+            <span className="block bg-[#FFC200] text-[#1A1A1A] px-[5vw] pt-[2vw] pb-[0.5vw] rounded-[999px] transform -rotate-3 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 rm-pop rm-parallax relative z-20 shadow-[12px_12px_0_#1A1A1A] border-4 border-textMain ml-[2vw]" data-speed="0.6">BHATT</span>
           </div>
         </h1>
         
@@ -139,8 +139,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CHESS EASTER EGG EMBED */}
+      <ChessboardEasterEgg />
+
       {/* ORANGE CONTACT */}
-      <section id="contact" className="bg-rmOrange py-40 rounded-t-[80px] -mt-16 relative z-30 border-[8px] border-textMain rm-section text-center">
+      <section id="contact" className="bg-rmOrange py-40 rounded-t-[80px] -mt-16 relative z-50 border-[8px] border-textMain rm-section text-center">
         <h2 className="font-syne font-extrabold text-[12vw] leading-[0.8] text-textMain uppercase rm-reveal rm-parallax" data-speed="0.5">
           LET'S
         </h2>
@@ -156,9 +159,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      {/* CHESS EASTER EGG EMBED */}
-      <ChessboardEasterEgg />
 
     </div>
   );
