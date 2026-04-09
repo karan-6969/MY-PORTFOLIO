@@ -112,7 +112,7 @@ export default function Home() {
       {/* BLUE WORK SECTION */}
       <section id="work" className="bg-rmBlue py-32 rounded-t-[80px] -mt-10 relative z-20 border-[8px] border-b-0 border-textMain rm-section">
         <div className="max-w-[1400px] mx-auto px-6">
-          <h2 className="font-syne font-medium text-[10vw] text-surface leading-[0.8] mb-24 rm-reveal">
+          <h2 className="font-syne font-medium text-[15vw] md:text-[10vw] text-surface leading-[0.8] mb-12 md:mb-24 rm-reveal">
             SELECTED<br/><span className="text-[#FFC200]">WORKS</span>
           </h2>
 
@@ -129,9 +129,9 @@ export default function Home() {
                  <div className="absolute top-12 right-12 w-20 h-20 bg-[#FFC200] rounded-full flex items-center justify-center text-textMain scale-0 group-hover:scale-100 transition-transform duration-500 ease-out shadow-2xl">
                    <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
                  </div>
-                 <div className="mt-20">
-                   <h3 className="font-syne font-extrabold text-[5vw] lg:text-[4vw] text-surface leading-[0.9]">{work.title}</h3>
-                   <p className="font-inter text-surface opacity-80 mt-6 text-[20px] font-medium">{work.sub}</p>
+                 <div className="mt-12 md:mt-20">
+                   <h3 className="font-syne font-extrabold text-[8vw] md:text-[5vw] lg:text-[4vw] text-surface leading-[0.9]">{work.title}</h3>
+                   <p className="font-inter text-surface opacity-80 mt-4 md:mt-6 text-[16px] md:text-[20px] font-medium">{work.sub}</p>
                  </div>
               </Link>
             ))}

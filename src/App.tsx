@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Cursor from './components/Cursor';
 import Navigation from './components/Navigation';
 import Preloader from './components/Preloader';
 import Home from './pages/Home';
@@ -11,7 +10,6 @@ function App() {
   return (
     <BrowserRouter>
       <Preloader />
-      <Cursor />
       <div className="bg-background text-textMain min-h-screen font-inter flex flex-col">
         <Navigation />
         <main className="flex-1">

@@ -10,7 +10,10 @@ export default function Navigation() {
       const id = location.hash.replace('#', '');
       const el = document.getElementById(id);
       if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+          window.history.replaceState(null, '', '/');
+        }, 100);
       }
     }
   }, [location]);
@@ -70,20 +73,20 @@ export default function Navigation() {
             </g>
           </svg>
         </Link>
-        <div className="hidden md:flex gap-4 font-inter text-[16px] font-bold uppercase">
+        <div className="flex gap-2 md:gap-4 font-inter text-[12px] md:text-[16px] font-bold uppercase">
           {isProjectPage ? (
-            <Link to="/#work" className="bg-textMain text-surface px-6 py-3 rounded-full hover:bg-rmBlue hover:scale-105 transition-all">
+            <Link to="/#work" className="bg-textMain text-surface px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-rmBlue hover:scale-105 transition-all">
               ← Back
             </Link>
           ) : (
             <>
-              <button onClick={() => handleScroll('work')} className="bg-surface border-4 border-transparent hover:border-textMain px-6 py-2 rounded-full transition-all outline-none">
+              <button onClick={() => handleScroll('work')} className="bg-surface border-[2px] md:border-4 border-transparent hover:border-textMain px-3 py-1 md:px-6 md:py-2 rounded-full transition-all outline-none">
                 Work
               </button>
-              <button onClick={() => handleScroll('about')} className="bg-surface border-4 border-transparent hover:border-textMain px-6 py-2 rounded-full transition-all outline-none">
+              <button onClick={() => handleScroll('about')} className="bg-surface border-[2px] md:border-4 border-transparent hover:border-textMain px-3 py-1 md:px-6 md:py-2 rounded-full transition-all outline-none">
                 About
               </button>
-              <button onClick={() => handleScroll('contact')} className="bg-textMain text-surface px-6 py-2 rounded-full hover:bg-rmOrange transition-colors outline-none cursor-none">
+              <button onClick={() => handleScroll('contact')} className="bg-textMain text-surface px-3 py-1 md:px-6 md:py-2 rounded-full hover:bg-rmOrange transition-colors outline-none cursor-none">
                 Contact
               </button>
             </>
