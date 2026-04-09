@@ -86,10 +86,10 @@ export default function Home() {
               I craft interfaces that are <span className="bg-[#FFC200] text-[#1A1A1A] px-3 py-1 rounded-[16px] inline-block -rotate-2 transform">bold</span>, fast, and unforgettable.<br className="hidden lg:block"/> Creative Developer & Frontend Engineer.
             </p>
           <div className="flex flex-col items-start lg:items-end gap-3 font-inter font-bold rm-pop sm:mb-12">
-            <a href="/Karan_Bhatt_CV.pdf" target="_blank" rel="noopener noreferrer" className="group bg-[#FF3B00] text-surface px-8 py-4 rounded-[999px] flex items-center gap-4 hover:bg-textMain transition-colors duration-300 magnetic cursor-none">
-              <span className="text-[16px]">DOWNLOAD CV</span>
+            <a href="https://drive.google.com/file/d/18hk7fRQeROUAfw2K3CmPYcrCwOtDJXMd/preview" target="_blank" rel="noopener noreferrer" className="group bg-[#FF3B00] text-surface px-8 py-4 rounded-[999px] flex items-center gap-4 hover:bg-textMain transition-colors duration-300 magnetic cursor-none">
+              <span className="text-[16px]">MY RESUME</span>
               <div className="w-8 h-8 bg-surface text-[#FF3B00] rounded-full flex items-center justify-center group-hover:text-textMain transition-colors">
-                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
               </div>
             </a>
           </div>
