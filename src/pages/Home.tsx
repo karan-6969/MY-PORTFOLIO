@@ -72,17 +72,17 @@ export default function Home() {
   return (
     <div className="w-full bg-background selection:bg-rmOrange selection:text-surface">
       {/* HERO SECTION */}
-      <section ref={heroRef} className="relative min-h-screen pt-[120px] pb-20 flex flex-col justify-between w-full overflow-hidden">
-        <h1 className="font-syne font-extrabold text-[15vw] leading-[0.8] tracking-tighter text-textMain uppercase relative z-10 w-full flex justify-center mt-10">
-          <div className="flex flex-col items-center justify-center -space-y-[1vw] relative w-full">
+      <section ref={heroRef} className="relative min-h-screen max-md:min-h-[90vh] pt-[120px] max-md:pt-[140px] pb-20 max-md:pb-12 flex flex-col justify-between max-md:justify-center max-md:gap-16 w-full overflow-hidden">
+        <h1 className="font-syne font-extrabold text-[15vw] max-md:text-[16vw] leading-[0.8] tracking-tighter text-textMain uppercase relative z-10 w-full flex justify-center mt-10 max-md:mt-0">
+          <div className="flex flex-col items-center justify-center -space-y-[1vw] max-md:space-y-4 relative w-full">
             <span className="block hover:text-rmBlue transition-colors duration-300 rm-pop rm-parallax relative z-10" data-speed="0.2">KARAN</span>
-            <span className="block bg-[#FFC200] text-[#1A1A1A] px-[5vw] pt-[2vw] pb-[0.5vw] rounded-[999px] transform -rotate-3 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 rm-pop rm-parallax relative z-20 shadow-[12px_12px_0_#1A1A1A] border-4 border-textMain ml-[2vw]" data-speed="0.6">BHATT</span>
+            <span className="block bg-[#FFC200] text-[#1A1A1A] px-[5vw] pt-[2vw] pb-[0.5vw] rounded-[999px] transform -rotate-3 max-md:rotate-0 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 rm-pop rm-parallax relative z-20 shadow-[12px_12px_0_#1A1A1A] max-md:shadow-[6px_6px_0_#1A1A1A] border-4 max-md:border-2 border-textMain ml-[2vw] max-md:ml-0" data-speed="0.6">BHATT</span>
           </div>
         </h1>
         
-        <div className="max-w-[1400px] mx-auto px-6 w-full">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-20 gap-12 w-full text-left">
-            <p className="text-[24px] md:text-[36px] font-inter font-medium text-textMain max-w-2xl leading-tight rm-pop">
+        <div className="max-w-[1400px] mx-auto px-6 w-full mt-4 md:mt-0">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-20 max-md:mt-4 gap-12 max-md:gap-8 w-full text-left">
+            <p className="text-[36px] max-md:text-[24px] font-inter font-medium text-textMain max-w-2xl leading-tight rm-pop">
               I craft interfaces that are <span className="bg-[#FFC200] text-[#1A1A1A] px-3 py-1 rounded-[16px] inline-block -rotate-2 transform">bold</span>, fast, and unforgettable.<br className="hidden lg:block"/> Creative Developer & Frontend Engineer.
             </p>
           <div className="flex flex-col items-start lg:items-end gap-3 font-inter font-bold rm-pop sm:mb-12">
